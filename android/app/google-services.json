@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "447914886870",
+    "project_id": "the-chowkidar-ceabe",
+    "storage_bucket": "the-chowkidar-ceabe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:447914886870:android:c18e12f4ef600bc98feb77",
+        "android_client_info": {
+          "package_name": "com.the"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "447914886870-ld26v8jg86gdpgtg0ee4b7m5i0veqk4f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.the",
+            "certificate_hash": "3954821d83871e88f0d444e445ccd2a1b19358fd"
+          }
+        },
+        {
+          "client_id": "447914886870-v6ltiq4eiljs7h3t4i4ash6fta23ofik.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIWgAhbQ0cBCiQqMR5WdGGm6imOem6900"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "447914886870-v6ltiq4eiljs7h3t4i4ash6fta23ofik.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
