@@ -60,7 +60,7 @@ class Mobilepage extends React.Component {
   const signInWithPhone=async()=>{
     if(this.state.number){
     const {number} =this.state
-    const confirmation = await auth.signInWithPhoneNumber(number);
+    const confirmation = await auth().signInWithPhoneNumber(number);
     console.log("confirmation ==>",confirmation)
     if(confirmation._auth._authResult){
       this.props.navigation.navigate("Verifyotp", {"confirmation":confirmation, "number":this.state.number})
