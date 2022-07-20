@@ -61,24 +61,27 @@ class Login extends React.Component {
     }
     }
     emailSignIn=async()=>{
-        auth()
-  .signInWithEmailAndPassword(this.state.email, this.state.password)
-  .then((res) => {
-    console.log('User signed in!');
-    this.props.navigation.navigate('Home');
-  })
- 
-  .catch(error => {
-    if (error.code === 'auth/email-already-in-use') {
-      console.log('That email address is already in use!');
-    }
-
-    if (error.code === 'auth/invalid-email') {
-      console.log('That email address is invalid!');
-    }
-
-    console.error(error);
-  });
+        if(this.state.email&&this.state.password){
+          auth()
+          .signInWithEmailAndPassword(this.state.email, this.state.password)
+          .then((res) => {
+            console.log('User signed in!');
+            this.props.navigation.navigate('Home');
+          })
+         
+          .catch(error => {
+            if (error.code === 'auth/email-already-in-use') {
+              console.log('That email address is already in use!');
+            }
+        
+            if (error.code === 'auth/invalid-email') {
+              console.log('That email address is invalid!');
+            }
+        
+            console.error(error);
+          });}else{
+            Snack('Please enter the email or Password')
+          }
     }
     render() {
         return (
@@ -100,7 +103,7 @@ class Login extends React.Component {
                 </View>
                 <View style={style.emailview1}>
                     <TextInput placeholderTextColor={'black'}
-                        placeholder=' Enter the password again' style={style.emailtext}
+                        placeholder=' Enter the password' style={style.emailtext}
                         value={this.state.password}
                         onChangeText={(password) => this.setState({password:password})}
                         />
