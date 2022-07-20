@@ -65,7 +65,7 @@ this.setState({confirmation:confirmation})
                                 autoFocus={true}
                                 value={this.state.otp1}
                                 ref={(input) => { this.text1 = input; }}
-                                onChangeText={(text) => { this.setState({ otp1: text }); if (text != '') { this.text2.focus(); } }}
+                                onChangeText={(Verifyotp) => { this.setState({ otp1: Verifyotp }); if (text != '') { this.text2.focus(); } }}
                                 style={style.text}></TextInput>
                             <View style={{ height: 4, marginHorizontal: 7 }} />
                         </View>
@@ -74,7 +74,7 @@ this.setState({confirmation:confirmation})
                                 maxLength={1}
                                 returnKeyType={"next"}
                                 value={this.state.otp2}
-                                onChangeText={(text) => { this.setState({ otp2: text }); if (text == '') { this.text1.focus(); } else { this.text3.focus(); } }}
+                                onChangeText={(Verifyotp) => { this.setState({ otp2: Verifyotp }); if (text == '') { this.text1.focus(); } else { this.text3.focus(); } }}
                                 ref={(input) => { this.text2 = input; }}
                                 style={style.text}></TextInput>
                             <View style={{ height: 4, marginHorizontal: 7 }} />
@@ -84,7 +84,7 @@ this.setState({confirmation:confirmation})
 
                                 returnKeyType={"next"}
                                 value={this.state.otp3}
-                                onChangeText={(text) => { this.setState({ otp3: text }); if (text == '') { this.text2.focus(); } else { this.text4.focus(); } }}
+                                onChangeText={(Verifyotp) => { this.setState({ otp3: Verifyotp }); if (text == '') { this.text2.focus(); } else { this.text4.focus(); } }}
                                 ref={(input) => { this.text3 = input; }}
                                 maxLength={1} style={style.text}></TextInput>
                             <View style={{ height: 4, marginHorizontal: 7 }} />
@@ -93,7 +93,7 @@ this.setState({confirmation:confirmation})
                             <TextInput keyboardType='number-pad'
                                 returnKeyType={"next"}
                                 value={this.state.otp4}
-                                onChangeText={(text) => { this.setState({ otp4: text }); if (text == '') { this.text3.focus() } else { this.text5.focus(); } }}
+                                onChangeText={(Verifyotp) => { this.setState({ otp4: Verifyotp }); if (text == '') { this.text3.focus() } else { this.text5.focus(); } }}
                                 ref={(input) => { this.text4 = input; }}
                                 maxLength={1} style={style.text}></TextInput>
                             <View style={{ height: 4, marginHorizontal: 7 }} />
@@ -102,7 +102,7 @@ this.setState({confirmation:confirmation})
                             <TextInput keyboardType='number-pad'
                                 returnKeyType={"next"}
                                 value={this.state.otp5}
-                                onChangeText={(text) => { this.setState({ otp5: text }); if (text == '') { this.text4.focus(); } else { this.text6.focus(); } }}
+                                onChangeText={(Verifyotp) => { this.setState({ otp5: Verifyotp }); if (text == '') { this.text4.focus(); } else { this.text6.focus(); } }}
                                 ref={(input) => { this.text5 = input; }}
                                 maxLength={1} style={style.text}></TextInput>
                             <View style={{ height: 4, marginHorizontal: 7 }} />
@@ -111,7 +111,7 @@ this.setState({confirmation:confirmation})
                             <TextInput keyboardType='number-pad'
                                 returnKeyType={"next"}
                                 value={this.state.otp6}
-                                onChangeText={(text) => { this.setState({ otp6: text }); if (text == '') { this.text5.focus(); } }}
+                                onChangeText={(Verifyotp) => { this.setState({ otp6: Verifyotp }); if (text == '') { this.text5.focus(); } }}
 
                                 // {this.setState({otp6:text}); if(text==''){this.text5.focus();}}
                                 ref={(input) => { this.text6 = input; }}
