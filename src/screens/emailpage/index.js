@@ -35,6 +35,7 @@ class Emailpage extends React.Component {
         )
     }
     emailSignUp=async()=>{
+        if(this.state.email&&this.state.password){
         auth()
   .createUserWithEmailAndPassword(this.state.email, this.state.password)
   .then(() => {
@@ -51,7 +52,9 @@ class Emailpage extends React.Component {
     }
 
     console.error(error);
-  });
+  });}else{
+    Snack('Please enter the email or Password')
+  }
     }
     render() {
         return (

@@ -13,13 +13,27 @@ class Verifyotp extends React.Component {
         super(props);
         this.state = {
             dropModal: false,
-            language: 'Select Language'
+            language: 'Select Language',
+            Verifyotp:'',
+            confirmation:null
         }
     }
 
-    componentDidMount = async () => {
-
+  async  componentDidMount  () {
+const confirmation = await this.props.navigation.getParam("confirmation")
+const number = await this.props.navigation.getParam("number")
+this.setState({confirmation:confirmation})
     }
+      confirmCode=async()=> {
+        const {confirmation,Verifyotp} = this.state
+    try {
+     const result = await confirm.confirm(Verifyotp);
+     console.log(result)
+     this.props.navigation.navigate("Setpassword")
+    } catch (error) {
+      console.log('Invalid code.');
+    }
+  }
 
     render() {
         return (
@@ -106,7 +120,7 @@ class Verifyotp extends React.Component {
                         </View>
                     </View>
                 </View>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('Setpassword')} style={style.loginview}>
+                <TouchableOpacity onPress={this.confirmCode} style={style.loginview}>
                     <Text style={style.textlogin}>Next</Text>
                 </TouchableOpacity>
             </LinearGradient>
