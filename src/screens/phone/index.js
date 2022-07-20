@@ -57,6 +57,7 @@ class Mobilepage extends React.Component {
         }
     }
   signInWithPhoneNumber=async()=>{
+    if(this.state.number){
     const {number} =this.state
     const confirmation = await auth.signInWithPhoneNumber(number);
     console.log("confirmation ==>",confirmation)
@@ -66,8 +67,11 @@ class Mobilepage extends React.Component {
     else{
       alert("Internal Error")
     }
+  } 
+  else{
+    Snack('Please enter the phone number')
   }
-
+  }
     render() {
         return (
             <LinearGradient colors={['#bfc9c9','#fcfcfc', '#fcfcfc']}  style={style.mainview}>
