@@ -56,11 +56,10 @@ class Mobilepage extends React.Component {
             Snack('Please Enter 10 Digit Mobile No')
         }
     }
-    render() {
-  const signInWithPhone=async()=>{
+  signInWithPhoneNumber=async()=>{
     if(this.state.number){
     const {number} =this.state
-    const confirmation = await auth().signInWithPhoneNumber(number);
+    const confirmation = await auth.signInWithPhoneNumber('+91 9566996945');
     console.log("confirmation ==>",confirmation)
     if(confirmation._auth._authResult){
       this.props.navigation.navigate("Verifyotp", {"confirmation":confirmation, "number":this.state.number})
@@ -73,6 +72,7 @@ class Mobilepage extends React.Component {
     Snack('Please enter the phone number')
   }
   }
+    render() {
         return (
             <LinearGradient colors={['#bfc9c9','#fcfcfc', '#fcfcfc']}  style={style.mainview}>
                                <StatusBar backgroundColor={'#bfc9c9'} />
@@ -176,7 +176,7 @@ class Mobilepage extends React.Component {
                 </View>
               
                </View>
-               <TouchableOpacity onPress={()=>signInWithPhone()} style={style.loginview}>
+               <TouchableOpacity onPress={this.signInWithPhoneNumber} style={style.loginview}>
                     <Text style={style.textlogin}>Next</Text>
                 </TouchableOpacity>
             </LinearGradient>
